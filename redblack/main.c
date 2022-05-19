@@ -17,7 +17,7 @@ int main()
         new_node = create_node(tree_array[i]);
         insert_node(root, new_node);
     }
-    print_tree(root->parent);
+    print_tree(find_root(root));
     printf("\n");
     return 0;
 }

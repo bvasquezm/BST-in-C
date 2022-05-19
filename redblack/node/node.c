@@ -26,6 +26,12 @@ void print_tree(Node* node) {
     if (node->right) { print_tree(node->right); }
 }
 
+Node* find_root (Node* node) {
+    while (node->parent) {
+        node = node->parent;
+    } return node;
+}
+
 void insert_node(Node* root, Node* new_node) {
     Node* actual_node = root;
 
@@ -92,18 +98,19 @@ void rotation(Node* gparent, Node* parent, bool caso) {
             gparent->parent = parent;
             parent->type = 0;
             gparent->type = 1;
-        } else {
+        } else if (parent->left) {
             Node* node = parent->left;
             parent->parent = node;
+            parent->left = NULL;
             node->right = parent;
             gparent->right = node;
             node->parent = gparent;
-            rotation(gparent, node->parent, true);        
+            rotation(gparent, node, true);        
         }
     }
     // Right rotation
     else { 
-        if (parent->right) {
+        if (parent->left) {
             if (gparent->parent) {
                 if (parent_relation(gparent)) {
                     gparent->parent->left = parent;
@@ -116,14 +123,15 @@ void rotation(Node* gparent, Node* parent, bool caso) {
             gparent->parent = parent;
             parent->type = 0;
             gparent->type = 1;
-        } else {
+        } else if (parent->right) {
             Node* node = parent->right;
             parent->parent = node;
+            parent->right = NULL;
             node->left = parent;
             gparent->left = node;
             node->parent = gparent;
-            rotation(gparent, node->parent, false);        
-        }
+            rotation(gparent, node, false);        
+        } 
     }
 }
 

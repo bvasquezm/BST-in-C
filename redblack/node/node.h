@@ -21,7 +21,9 @@ typedef struct node
 Node* create_node(int value);
 
 void print_tree(Node* node);
+Node* find_root (Node* node);
 void insert_node(Node* root, Node* new_node);
+
 void order_tree(Node* node);
 void rotation(Node* gparent, Node* parent, bool caso);
 void change_colors(Node* node, Node* uncle);
