@@ -11,7 +11,6 @@ Node* create_node(int value)
     *node = (Node) {
     .type = 1,          // starts as red node
     .value = value,
-    .root = false,
     .left = NULL,
     .right = NULL,
     .parent = NULL,
