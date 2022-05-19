@@ -7,7 +7,7 @@
 int main() 
 {
     int N = 2;
-    int tree_array[4] = {1, 2};
+    int tree_array[2] = {1, 2};
     
     Node* root = create_node(3);
     root->type = 0; // root node has to be black
