@@ -1,6 +1,6 @@
-#############################
-##	Makefile RedBlack Tree ##
-#############################
+############################
+## Makefile RedBlack Tree ##
+############################
 
 # -c: gives current file as output.o
 # -o: indicates an optional name for the .out file
