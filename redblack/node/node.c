@@ -19,9 +19,17 @@ Node* create_node(int value)
     return node;
 }
 
+const char* node_type(Node* node) {
+    if (node->type == 0) {
+        return "Black";
+    } else {
+        return "Red";
+    }
+}
+
 void print_tree(Node* node) {
     if (!node) { return; }
-    printf("%d %d\n", node->value, node->type);
+    printf("%d %s\n", node->value, node_type(node));
     if (node->left) { print_tree(node->left); }
     if (node->right) { print_tree(node->right); }
 }
