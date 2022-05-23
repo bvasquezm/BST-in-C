@@ -5,6 +5,7 @@
 
 # Executable files
 redblack/main
+BST/main
 
 # User-specific files
 *.rsuser
